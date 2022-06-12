@@ -4,8 +4,8 @@ import UserAvatar from './Avatar';
 const UserInfo = props => {
   return (
     <div className="user-info">
-      <UserAvatar user={props.user} />
-      <div className="user-info__name">{props.user}</div>
+      <UserAvatar avatarUrl={props.author.avatarUrl} name={props.author.name} />
+      <div className="user-info__name">{props.author.name}</div>
     </div>
   );
 };
