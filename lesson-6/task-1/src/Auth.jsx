@@ -37,11 +37,13 @@ class Auth extends React.Component {
     });
   };
   render() {
-    if (this.state.isProcessing) {
+    const { isProcessing, isLoggedIn } = this.state;
+
+    if (isProcessing) {
       return <Spinner></Spinner>;
     }
 
-    if (this.state.isLoggedIn) {
+    if (isLoggedIn) {
       return <Logout onLogout={this.logoutHandler}></Logout>;
     }
     return <Login onLogin={this.loginHandler}></Login>;
