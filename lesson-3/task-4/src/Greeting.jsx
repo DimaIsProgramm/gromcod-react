@@ -1,26 +1,26 @@
 import React from 'react';
 import moment from 'moment';
 
-// const age = date => {
-//   let currentAge = moment(date).fromNow().split(' ').splice(0, 2).join(' ');
+const age = date => {
+  let currentAge = moment(date).fromNow().split(' ').splice(0, 1).join(' ');
 
-//   return currentAge;
-// };
+  return currentAge;
+};
 
-function currentAge(birthDate) {
-  let now = new Date();
-  let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  let dobnow = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
-  let age;
+// function currentAge(birthDate) {
+//   let now = new Date();
+//   let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+//   let dobnow = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+//   let age;
 
-  age = today.getFullYear() - birthDate.getFullYear();
+//   age = today.getFullYear() - birthDate.getFullYear();
 
-  if (today < dobnow) {
-    age = age - 1;
-  }
+//   if (today < dobnow) {
+//     age = age - 1;
+//   }
 
-  return age;
-}
+//   return age;
+// }
 
 const userInfo = {
   firstName: 'John',
@@ -31,8 +31,7 @@ const userInfo = {
 const Greeting = ({ firstName, lastName, birthDate }) => {
   return (
     <div className="greeting" user={userInfo}>
-      My name is {userInfo.firstName} {userInfo.lastName}. I'm {currentAge(userInfo.birthDate)}{' '}
-      years old
+      My name is {userInfo.firstName} {userInfo.lastName}. I'm {age(userInfo.birthDate)} years old
     </div>
   );
 };
