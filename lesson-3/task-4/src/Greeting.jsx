@@ -28,7 +28,7 @@ const userInfo = {
 const Greeting = () => {
   return (
     <div className="greeting">
-      My name is {formatName(userInfo)}. I'm {currentAge(userInfo.birthDate)} years old.
+      My name is {formatName(userInfo)}. I'm {currentAge(userInfo.birthDate)} years old
     </div>
   );
 };
