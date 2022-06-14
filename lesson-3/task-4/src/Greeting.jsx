@@ -1,23 +1,30 @@
 import React from 'react';
+import moment from 'moment';
 
 function formatName(user) {
   return user.firstName + ' ' + user.lastName;
 }
 
-function currentAge(birthDate) {
-  let now = new Date();
-  let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  let dobnow = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
-  let age;
+const age = date => {
+  let currentAge = moment(date).fromNow().split(' ').splice(0, 2).join(' ');
 
-  age = today.getFullYear() - birthDate.getFullYear();
+  return currentAge;
+};
 
-  if (today < dobnow) {
-    age = age - 1;
-  }
+// function currentAge(birthDate) {
+//   let now = new Date();
+//   let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+//   let dobnow = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+//   let age;
 
-  return age;
-}
+//   age = today.getFullYear() - birthDate.getFullYear();
+
+//   if (today < dobnow) {
+//     age = age - 1;
+//   }
+
+//   return age;
+// }
 
 const userInfo = {
   firstName: 'John',
@@ -28,7 +35,7 @@ const userInfo = {
 const Greeting = () => {
   return (
     <div className="greeting">
-      My name is {formatName(userInfo)}. I'm {currentAge(userInfo.birthDate)} years old
+      My name is {formatName(userInfo)}. I'm {age(userInfo.birthDate)} old
     </div>
   );
 };
