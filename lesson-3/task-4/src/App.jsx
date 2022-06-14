@@ -1,5 +1,24 @@
 import React from 'react';
-import Greeting from './Greeting';
+// import Greeting from './Greeting';
+
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
+}
+
+function currentAge(birthDate) {
+  let now = new Date();
+  let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  let dobnow = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+  let age;
+
+  age = today.getFullYear() - birthDate.getFullYear();
+
+  if (today < dobnow) {
+    age = age - 1;
+  }
+
+  return age;
+}
 
 const userInfo = {
   firstName: 'John',
@@ -8,7 +27,11 @@ const userInfo = {
 };
 
 const App = () => {
-  return <Greeting user={userInfo} date={new Date('2019-01-01T11:32:19.566Z')} />;
+  return (
+    <div>
+      My name is {formatName(userInfo)}. I'm {currentAge(userInfo.birthDate)} years old.
+    </div>
+  );
 };
 
 export default App;
