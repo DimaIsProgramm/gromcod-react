@@ -1,10 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 
-function formatName(user) {
-  return user.firstName + ' ' + user.lastName;
-}
-
 const age = date => {
   let currentAge = moment(date).fromNow().split(' ').splice(0, 2).join(' ');
 
@@ -32,10 +28,10 @@ const userInfo = {
   birthDate: new Date('2001-01-01T11:11:11.819Z'),
 };
 
-const Greeting = () => {
+const Greeting = ({ firstName, lastName, birthDate }) => {
   return (
-    <div className="greeting">
-      My name is {formatName(userInfo)}. I'm {age(userInfo.birthDate)} old
+    <div className="greeting" user={userInfo}>
+      My name is {userInfo.firstName} {userInfo.lastName}. I'm {age(userInfo.birthDate)} old
     </div>
   );
 };
