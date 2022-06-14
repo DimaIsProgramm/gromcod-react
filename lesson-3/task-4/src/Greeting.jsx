@@ -22,16 +22,10 @@ const age = date => {
 //   return age;
 // }
 
-const userInfo = {
-  firstName: 'John',
-  lastName: 'Doe',
-  birthDate: new Date('2001-01-01T11:11:11.819Z'),
-};
-
 const Greeting = ({ firstName, lastName, birthDate }) => {
   return (
-    <div className="greeting" user={userInfo}>
-      My name is {userInfo.firstName} {userInfo.lastName}. I'm {age(userInfo.birthDate)} years old
+    <div className="greeting">
+      My name is {firstName} {lastName}. I'm {age(birthDate)} years old
     </div>
   );
 };
