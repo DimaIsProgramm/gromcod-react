@@ -16,9 +16,9 @@ class Toggler extends React.Component {
 
   render() {
     return (
-      <div className="toggler">
-        <button onClick={this.handleClick}>{this.state.isToggleOn ? 'Off' : 'On'}</button>
-      </div>
+     
+        <button className="toggler" onClick={this.handleClick}>{this.state.isToggleOn ? 'Off' : 'On'}</button>
+    
     );
   }
 }
