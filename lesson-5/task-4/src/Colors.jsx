@@ -16,6 +16,7 @@ class Colors extends Component {
         <button style={{backgroundColor: GREEN}} className="colors__button" onClick={() => this.setBodyColor(GREEN)}></button>
         <button style={{backgroundColor: BLUE}} className="colors__button" onClick={() => this.setBodyColor(BLUE)}></button>
       </div>
+);
   }
 }
 
