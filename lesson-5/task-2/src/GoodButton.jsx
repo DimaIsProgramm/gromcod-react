@@ -13,8 +13,4 @@ handleClick() {
 }
 }
 
-const GoodButton = () => (
-  
-);
-
 export default GoodButton;
