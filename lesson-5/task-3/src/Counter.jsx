@@ -34,7 +34,7 @@ class Counter extends React.Component {
           -
         </button>
         <span className="counter__value" onClick={() => this.reset()}>
-          0
+          {this.state.counter}
         </span>
         <button data-action="increase" className="counter__button" onClick={this.increment}>
           +
