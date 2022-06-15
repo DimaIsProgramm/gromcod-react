@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Toggle from './Toggler';
+import Toggle from './Toggle';
 
 const rootElement = document.querySelector('#root');
 

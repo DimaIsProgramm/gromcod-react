@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Toggle extends React.Component {
+class Toggler extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isToggleOn: true };
@@ -23,4 +23,4 @@ class Toggle extends React.Component {
   }
 }
 
-export default Toggle;
+export default Toggler;
