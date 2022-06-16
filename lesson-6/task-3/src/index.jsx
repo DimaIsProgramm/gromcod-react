@@ -5,4 +5,4 @@ import './index.scss';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Mailbox unreadMessages={[]} />, rootElement);
+ReactDOM.render(<Mailbox unreadMessages={['a', 'b']} />, rootElement);
