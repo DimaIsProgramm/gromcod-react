@@ -34,20 +34,20 @@ class ColorPicker extends Component {
   render() {
     return (
       <div>
-        {this.state.text && <div class="picker__title">{this.state.text}</div>}
+        {this.state.text && <div className="picker__title">{this.state.text}</div>}
         <div>
           <button
-            class="picker__button picker__button_coral"
+            className="picker__button picker__button_coral"
             onMouseEnter={this.onEnterCoral}
             onMouseLeave={this.outLeave}
           ></button>
           <button
-            class="picker__button picker__button_aqua"
+            className="picker__button picker__button_aqua"
             onMouseEnter={this.onEnterAqua}
             onMouseLeave={this.outLeave}
           ></button>
           <button
-            class="picker__button picker__button_bisque"
+            className="picker__button picker__button_bisque"
             onMouseEnter={this.onEnterBisque}
             onMouseLeave={this.outLeave}
           ></button>
@@ -60,6 +60,6 @@ class ColorPicker extends Component {
 export default ColorPicker;
 
 // algo
-// навесить 2 оюработчика на кнопку
-// при попадании курсора в квадрат показівать текст
+// навесить 2 обработчика на кнопку
+// при попадании курсора в квадрат показивать текст
 // при покидании кнопки очищать текст
