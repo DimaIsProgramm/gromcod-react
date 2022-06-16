@@ -12,34 +12,34 @@ class ColorPicker extends Component {
     };
   }
 
-  onClickCoral = () => {
+  onEnterCoral = () => {
     this.setState({
       text: 'Coral',
     });
   };
-  outClickCoral = () => {
+  outLeaveCoral = () => {
     this.setState({
       text: '',
     });
   };
 
-  onClickAqua = () => {
+  onEnterAqua = () => {
     this.setState({
       text: 'Aqua',
     });
   };
-  outClickAqua = () => {
+  outLeaveAqua = () => {
     this.setState({
       text: '',
     });
   };
 
-  onClickBisque = () => {
+  onEnterBisque = () => {
     this.setState({
       text: 'Bisque',
     });
   };
-  outClickBisque = () => {
+  outLeaveBisque = () => {
     this.setState({
       text: '',
     });
@@ -53,20 +53,20 @@ class ColorPicker extends Component {
           <button
             class="picker__button picker__button_coral"
             style={{ backgroundColor: CORAL }}
-            onMouseEnter={this.onClickCoral}
-            onMouseLeave={this.outClickCoral}
+            onMouseEnter={this.onEnterCoral}
+            onMouseLeave={this.outLeaveCoral}
           ></button>
           <button
             class="picker__button picker__button_aqua"
             style={{ backgroundColor: AQUA }}
-            onMouseEnter={this.onClickAqua}
-            onMouseLeave={this.outClickAqua}
+            onMouseEnter={this.onEnterAqua}
+            onMouseLeave={this.outLeaveAqua}
           ></button>
           <button
             class="picker__button picker__button_bisque"
             style={{ backgroundColor: BISQUE }}
-            onMouseEnter={this.onClickBisque}
-            onMouseLeave={this.outClickBisque}
+            onMouseEnter={this.onEnterBisque}
+            onMouseLeave={this.outLeaveBisque}
           ></button>
         </div>
       </div>
