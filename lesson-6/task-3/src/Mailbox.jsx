@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.scss';
 
 const Mailbox = ({ unreadMessages }) => {
   return (
