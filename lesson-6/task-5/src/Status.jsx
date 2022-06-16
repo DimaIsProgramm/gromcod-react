@@ -4,7 +4,7 @@ import Online from './Online';
 
 class Status extends React.Component {
   state = {
-    isOnline: false,
+    isOnline: true,
   };
 
   render() {
