@@ -13,11 +13,6 @@ class ColorPicker extends Component {
       text: 'Coral',
     });
   };
-  outLeave = () => {
-    this.setState({
-      text: null,
-    });
-  };
 
   onEnterAqua = () => {
     this.setState({
@@ -31,6 +26,11 @@ class ColorPicker extends Component {
     });
   };
 
+  outLeave = () => {
+    this.setState({
+      text: null,
+    });
+  };
   render() {
     return (
       <div>
