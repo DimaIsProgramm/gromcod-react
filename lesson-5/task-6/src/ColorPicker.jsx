@@ -13,7 +13,7 @@ class ColorPicker extends Component {
       text: 'Coral',
     });
   };
-  outLeaveCoral = () => {
+  outLeave = () => {
     this.setState({
       text: null,
     });
@@ -24,42 +24,32 @@ class ColorPicker extends Component {
       text: 'Aqua',
     });
   };
-  outLeaveAqua = () => {
-    this.setState({
-      text: null,
-    });
-  };
 
   onEnterBisque = () => {
     this.setState({
       text: 'Bisque',
     });
   };
-  outLeaveBisque = () => {
-    this.setState({
-      text: null,
-    });
-  };
 
   render() {
     return (
       <div>
-           <div class="picker__title">{this.state.text}</div>
+        {this.state.text && <div class="picker__title">{this.state.text}</div>}
         <div>
           <button
             class="picker__button picker__button_coral"
             onMouseEnter={this.onEnterCoral}
-            onMouseLeave={this.outLeaveCoral}
+            onMouseLeave={this.outLeave}
           ></button>
           <button
             class="picker__button picker__button_aqua"
             onMouseEnter={this.onEnterAqua}
-            onMouseLeave={this.outLeaveAqua}
+            onMouseLeave={this.outLeave}
           ></button>
           <button
             class="picker__button picker__button_bisque"
             onMouseEnter={this.onEnterBisque}
-            onMouseLeave={this.outLeaveBisque}
+            onMouseLeave={this.outLeave}
           ></button>
         </div>
       </div>
