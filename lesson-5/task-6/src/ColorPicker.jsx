@@ -19,7 +19,7 @@ class ColorPicker extends Component {
   };
   outLeaveCoral = () => {
     this.setState({
-      text: '',
+      text: null,
     });
   };
 
@@ -30,7 +30,7 @@ class ColorPicker extends Component {
   };
   outLeaveAqua = () => {
     this.setState({
-      text: '',
+      text: null,
     });
   };
 
@@ -41,7 +41,7 @@ class ColorPicker extends Component {
   };
   outLeaveBisque = () => {
     this.setState({
-      text: '',
+      text: null,
     });
   };
 
