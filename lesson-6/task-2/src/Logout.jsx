@@ -1,13 +1,12 @@
 import React from 'react';
+import './index.scss';
 
-const handleLogout = () => {
-  this.setState({
-    isLoggedIn: true,
-  });
-};
-
-const Logout = () => {
-  return <button onClick={handleLogout}>Logout</button>;
+const Logout = ({ onLogout }) => {
+  return (
+    <button className="logout btn" onClick={onLogout}>
+      Logout
+    </button>
+  );
 };
 
 export default Logout;

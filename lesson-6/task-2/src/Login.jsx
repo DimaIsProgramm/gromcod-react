@@ -1,13 +1,11 @@
 import React from 'react';
+import './index.scss';
 
-handleLogin = () => {
-  this.setState({
-    isLoggedIn: true,
-  });
+const Login = ({ onLogin }) => {
+  return (
+    <button className="login btn" onClick={onLogin}>
+      Login
+    </button>
+  );
 };
-
-const Login = () => {
-  return <button onClick={this.handleLogin}>Login</button>;
-};
-
 export default Login;
