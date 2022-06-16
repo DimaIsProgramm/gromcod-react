@@ -25,7 +25,7 @@ class ColorPicker extends Component {
 
   onEnterAqua = () => {
     this.setState({
-      text: 'Auqa',
+      text: 'Aqua',
     });
   };
   outLeaveAqua = () => {
