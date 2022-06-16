@@ -34,7 +34,7 @@ class ColorPicker extends Component {
   render() {
     return (
       <div>
-        {this.state.text && <div className="picker__title">{this.state.text}</div>}
+        <div className="picker__title">{this.state.text}</div>
         <div>
           <button
             className="picker__button picker__button_coral"
