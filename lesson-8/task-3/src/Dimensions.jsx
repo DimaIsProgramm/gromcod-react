@@ -8,7 +8,7 @@ class Dimensions extends React.Component {
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
     const { innerWidth, innerHeight } = window;
-    this.setDimensions(innerHeight, innerWidth);
+    this.setDimensions(innerWidth, innerHeight);
   }
 
   componentWillUnmount() {
@@ -16,7 +16,7 @@ class Dimensions extends React.Component {
   }
   onResize = e => {
     const { innerWidth, innerHeight } = e.target;
-    this.setDimensions(innerHeight, innerWidth);
+    this.setDimensions(innerWidth, innerHeight);
   };
 
   setDimensions = (width, height) => {
@@ -31,3 +31,5 @@ class Dimensions extends React.Component {
     return <div className="dimensions">{`${this.state.width}px - ${this.state.height}px`}</div>;
   }
 }
+
+export default Dimensions;
