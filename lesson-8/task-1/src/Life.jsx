@@ -7,7 +7,7 @@ class Life extends React.Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount: API calss, subscriptions');
+    console.log('componentDidMount: API calls, subscriptions');
   }
 
   shouldComponentUpdate() {
