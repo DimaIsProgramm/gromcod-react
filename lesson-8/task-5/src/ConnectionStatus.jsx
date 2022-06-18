@@ -1,39 +1,36 @@
 import React from 'react';
 
-class User extends React.Component {
+class ConnectionStatus extends React.Component {
   state = {
-    user: null,
+    status: true,
   };
 
   componentDidMount() {
-    this.fetchUser(this.props.userId);
+    window.addEventListener('online', this.onlineHendler);
+    window.addEventListener('offline', this.offlineHendler);
   }
 
-  fetchUser = userId => {
-    fetch(`https://api.github.com/users/${userId}`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          user: data,
-        });
-      });
+  componentWillUnmount() {
+    window.removeEventListener('online', this.onlineHendler);
+    window.removeEventListener('offline', this.offlineHendler);
+  }
+
+  onlineHendler = () => {
+    this.setState({
+      status: true,
+    });
+  };
+  offlineHendler = () => {
+    this.setState({
+      status: false,
+    });
   };
   render() {
-    const { user } = this.state;
-    if (!user) {
+    if (this.state.status) {
       return null;
     }
-    const { avatar_url, location, name } = user;
-    return (
-      <div className="user">
-        <img src={avatar_url} alt="User Avatar" className="user__avatar" />
-        <div className="user__info">
-          <span className="user__name">{name}</span>
-          <span className="user__location">{location}</span>
-        </div>
-      </div>
-    );
+    return <div className="status status_offline">{this.state.status}</div>;
   }
 }
 
-export default User;
+export default ConnectionStatus;
