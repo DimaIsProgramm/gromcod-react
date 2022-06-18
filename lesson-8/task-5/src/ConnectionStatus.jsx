@@ -2,7 +2,7 @@ import React from 'react';
 
 class ConnectionStatus extends React.Component {
   state = {
-    status: true,
+    status: null,
   };
 
   componentDidMount() {
@@ -17,16 +17,16 @@ class ConnectionStatus extends React.Component {
 
   onlineHendler = () => {
     this.setState({
-      status: true,
+      status: false,
     });
   };
   offlineHendler = () => {
     this.setState({
-      status: false,
+      status: true,
     });
   };
   render() {
-    if (this.state.status) {
+    if (!this.state.status) {
       return null;
     }
     return <div className="status status_offline">{this.state.status}</div>;
