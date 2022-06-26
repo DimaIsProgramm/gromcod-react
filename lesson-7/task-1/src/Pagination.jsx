@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Pagination = ({ goPrev, goNext, curPage, totalItems, itemPerPage }) => {
-  const totalStr = Math.ceil(totalItems / itemPerPage);
-  const isPrevPageAvailable = curPage === 1;
-  const isNextPageAvailable = curPage === totalStr;
+const Pagination = ({ goPrev, goNext, currentPage, totalItems, itemsPerPage }) => {
+  const totalStr = Math.ceil(totalItems / itemsPerPage);
+  const isPrevPageAvailable = currentPage === 1;
+  const isNextPageAvailable = currentPage === totalStr;
   return (
     <div className="pagination">
       {isPrevPageAvailable ? (
@@ -14,7 +14,7 @@ const Pagination = ({ goPrev, goNext, curPage, totalItems, itemPerPage }) => {
         </button>
       )}
 
-      <span className="pagination__page">{curPage}</span>
+      <span className="pagination__page">{currentPage}</span>
       {isNextPageAvailable ? (
         <button className="btn" onClick={goNext} disabled></button>
       ) : (

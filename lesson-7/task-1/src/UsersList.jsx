@@ -7,36 +7,36 @@ import User from './User';
 
 class UsersList extends React.Component {
   state = {
-    curPage: 3,
+    currentPage: 3,
   };
 
-  itemPerPage = 3;
+  itemsPerPage = 3;
 
   prevBtnHandler = () => {
     this.setState({
-      curPage: this.state.curPage - 1,
+      currentPage: this.state.currentPage - 1,
     });
   };
   nextBtnHandler = () => {
     this.setState({
-      curPage: this.state.curPage + 1,
+      currentPage: this.state.currentPage + 1,
     });
   };
 
   render() {
     const users = this.props.users;
-    const startIndex = (this.state.curPage - 1) * this.itemPerPage;
-    const endIndex = startIndex + this.itemPerPage;
+    const startIndex = (this.state.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
     const usersToRender = users.slice(startIndex, endIndex);
 
     return (
       <div>
         <Pagination
-          curPage={this.state.curPage}
+          currentPage={this.state.currentPage}
           goPrev={this.prevBtnHandler}
           goNext={this.nextBtnHandler}
           totalItems={users.length}
-          itemPerPage={this.itemPerPage}
+          itemsPerPage={this.itemsPerPage}
         />
         <ul className="users">
           {usersToRender.map(user => (
