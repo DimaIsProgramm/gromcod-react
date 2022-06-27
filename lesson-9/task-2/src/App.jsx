@@ -3,7 +3,6 @@ import UserForm from './UserForm';
 
 class App extends React.Component {
   createUser(user) {
-    event.preventDefault();
     console.log(user);
   }
 
