@@ -5,11 +5,10 @@ import Filter from './Filter';
 class UsersList extends React.Component {
   state = {
     value: '',
-    count: this.props.users.length,
   };
 
   handleChange = event => {
-    this.setState({ value: event.target.value, count: event.target.count });
+    this.setState({ value: event.target.value });
   };
 
   render() {
@@ -27,7 +26,12 @@ class UsersList extends React.Component {
     }
     return (
       <div>
-        <Filter value={value} totalItems={users.length} onText={this.handleChange} count={count} />
+        <Filter
+          value={value}
+          totalItems={users.length}
+          onChange={this.handleChange}
+          count={filteredUsers.length}
+        />
         <ul>{filteredUsers}</ul>
       </div>
     );
