@@ -1,36 +1,22 @@
 import React from 'react';
 
-class Search extends React.Component {
-  state = {
-    value: '',
-  };
-
-  handleChange = event => {
-    this.setState({
-      value: event.target.value,
-    });
-  };
-
-  search = event => {
-    event.preventDefault();
-    alert(`Search text: ${this.state.value}`);
-  };
-
+class UserProfile extends React.Component {
   render() {
+    if (!this.props.userData) {
+      return null;
+    }
+    const { name, location, avatar_url } = this.props.userData;
+
     return (
-      <form className="search" onSubmit={this.search}>
-        <input
-          type="text"
-          onChange={this.handleChange}
-          value={this.state.value}
-          className="search__input"
-        />
-        <button className="search__button" type="submit">
-          Search
-        </button>
-      </form>
+      <div className="user">
+        <img alt="User Avatar" src={avatar_url} className="user__avatar" />
+        <div className="user__info">
+          <span className="user__name">{name}</span>
+          <span className="user__location">{location}</span>
+        </div>
+      </div>
     );
   }
 }
 
-export default Search;
+export default UserProfile;

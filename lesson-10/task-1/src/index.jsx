@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Search from './Search';
+import Page from './App';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Search />, rootElement);
+ReactDOM.render(<Page userId="github" />, rootElement);
