@@ -25,7 +25,7 @@ class App extends React.Component {
         <Expand
           title="Awsome title"
           onClose={this.hideContent}
-          isOpen={this.state.isOpen}
+          isOpen={isOpen}
           onOpen={this.showContent}
         >
           <p>
