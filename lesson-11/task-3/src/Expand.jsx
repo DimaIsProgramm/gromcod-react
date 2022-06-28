@@ -5,14 +5,9 @@ import PropTypes from 'prop-types';
 const Expand = ({ title, children, onClose, isOpen, onOpen }) => {
   if (!isOpen) {
     return (
-      <div className="expand border">
-        <div className="expand__header">
-          <span className="expand__title">{title}</span>
           <button className="expand__toggle-btn" onClick={onOpen}>
             <i className="fas fa-chevron-down"></i>
           </button>
-        </div>
-      </div>
     );
   }
 
