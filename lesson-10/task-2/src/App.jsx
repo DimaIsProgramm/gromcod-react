@@ -25,8 +25,8 @@ class Page extends React.Component {
       <div className="page">
         <h1 className="title">{`Hello, ${userData.firstName} ${userData.lastName}`}</h1>
         <main className="content">
-          <ShoppingCart userData={this.state.userData} />
-          <Profile userData={this.state.userData} handleChange={this.handleChange} />
+          <ShoppingCart userName={userData.firstName} />
+          <Profile userData={userData} handleChange={this.handleChange} />
         </main>
       </div>
     );
