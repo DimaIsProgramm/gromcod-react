@@ -1,22 +1,17 @@
 import React from 'react';
 
-class UserProfile extends React.Component {
+class EvenNumbers extends React.Component {
+  shouldComponentUpdate(nexProps) {
+    return nexProps.number % 2 === 0;
+  }
   render() {
-    if (!this.props.userData) {
-      return null;
-    }
-    const { name, location, avatar_url } = this.props.userData;
-
     return (
-      <div className="user">
-        <img alt="User Avatar" src={avatar_url} className="user__avatar" />
-        <div className="user__info">
-          <span className="user__name">{name}</span>
-          <span className="user__location">{location}</span>
-        </div>
+      <div className="number">
+        <span className="number__title">{this.props.title}</span>
+        <span className="number__value">{this.props.number}</span>
       </div>
     );
   }
 }
 
-export default UserProfile;
+export default EvenNumbers;

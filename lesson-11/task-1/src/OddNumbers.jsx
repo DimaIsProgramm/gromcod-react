@@ -1,34 +1,17 @@
 import React from 'react';
-import UserProfile from './UserProfile';
-import UserMenu from './UserMenu';
 
-class Page extends React.Component {
-  state = {
-    userData: null,
-  };
-
-  componentDidMount() {
-    this.fetchUserData(this.props.userId);
+class OddNumbers extends React.Component {
+  shouldComponentUpdate(nexProps) {
+    return nexProps.number % 2 === 1;
   }
-
-  fetchUserData = userId => {
-    const userUrl = `https://api.github.com/users/${userId}`;
-    fetch(userUrl)
-      .then(response => response.json())
-      .then(userData => this.setState({ userData }));
-  };
-
   render() {
     return (
-      <div className="page">
-        <header className="header">
-          <UserMenu userData={this.state.userData} />
-        </header>
-
-        <UserProfile userData={this.state.userData} />
+      <div className="number">
+        <span className="number__title">{this.props.title}</span>
+        <span className="number__value">{this.props.number}</span>
       </div>
     );
   }
 }
 
-export default Page;
+export default OddNumbers;
