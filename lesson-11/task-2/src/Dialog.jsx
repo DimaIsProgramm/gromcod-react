@@ -27,7 +27,7 @@ Dialog.propTypes = {
 
 Dialog.defaltProps = {
   title: '',
-  isOpen: fasle,
+  isOpen: false,
 };
 
 export default Dialog;
