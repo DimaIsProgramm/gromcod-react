@@ -23,7 +23,7 @@ Task.propTypes = {
   title: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
-  done: PropTypes.bool.isRequired,
+  done: PropTypes.bool,
 };
 
 Task.defaltProps = {

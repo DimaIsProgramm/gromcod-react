@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 
-const baseUrl = 'https://crudcrud.com/api/ff4b6bc8280944ce88beab1971160ef1/tasks';
+const baseUrl = 'https://62bb282e573ca8f832942d4a.mockapi.io/api/todo/tasks';
 
 export const createTask = taskData => {
   return fetch(baseUrl, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json=utf-8',
+      'Content-Type': 'application/json;charset=utf-8',
     },
     body: JSON.stringify(taskData),
   }).then(response => {
@@ -30,7 +30,7 @@ export const updateTask = (taskId, taskData) => {
   return fetch(`${baseUrl}/${taskId}`, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json=utf-8',
+      'Content-Type': 'application/json;charset=utf-8',
     },
     body: JSON.stringify(taskData),
   }).then(response => {
