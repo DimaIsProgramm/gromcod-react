@@ -1,6 +1,7 @@
 import React from 'react';
 import Task from './Task';
 import CreateTaskInput from './CreateTaskInput';
+import PropTypes from 'prop-types';
 import { createTask, fetchTasksList, deleteTask, updateTask } from './tasksGateway';
 
 class TasksList extends React.Component {
@@ -60,5 +61,13 @@ class TasksList extends React.Component {
     );
   }
 }
+
+TasksList.propTypes = {
+  tasks: PropTypes.array,
+};
+
+TasksList.defaltProps = {
+  tasks: [],
+};
 
 export default TasksList;
